@@ -15,6 +15,7 @@ class Api {
     return fetch(`${this._url}/users/me`, {
       method: "GET",
       headers: this._headers,
+      credentials: 'include'
     }).then(this._checkResponse);
   }
 
@@ -22,6 +23,7 @@ class Api {
     return fetch(`${this._url}/cards`, {
       method: "GET",
       headers: this._headers,
+      credentials: 'include'
     }).then(this._checkResponse);
   }
 
@@ -29,6 +31,7 @@ class Api {
     return fetch(`${this._url}/users/me`, {
       method: "PATCH",
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify({
         name: data.name,
         about: data.about,
@@ -40,6 +43,7 @@ class Api {
     return fetch(`${this._url}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify({
         avatar: userInfo.avatar,
       }),
@@ -50,6 +54,7 @@ class Api {
     return fetch(`${this._url}/cards`, {
       method: "POST",
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify({
         name: card.name,
         link: card.link,
@@ -61,6 +66,7 @@ class Api {
     return fetch(`${this._url}/cards/${cardId}/likes`, {
       method: isLiked ? "PUT" : "DELETE",
       headers: this._headers,
+      credentials: 'include',
     }).then(this._checkResponse);
   }
 
@@ -68,12 +74,13 @@ class Api {
     return fetch(`${this._url}/cards/${cardId}`, {
       method: "DELETE",
       headers: this._headers,
+      credentials: 'include',
     }).then(this._checkResponse);
   }
 }
 
 const api = new Api({
-  baseUrl: "https://mesto.nomoreparties.co/v1/cohort-43",
+  baseUrl: "http://api.mesto.kliueva.nomoredomains.club",
   headers: {
     "content-type": "application/json",
     authorization: "dec93d61-0cc9-4efe-ab10-1321bb5cdf78",
