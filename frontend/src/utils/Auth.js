@@ -39,7 +39,7 @@ class Auth {
 }
 
 const auth = new Auth({
-  baseUrl: "https://auth.nomoreparties.co",
+  baseUrl: "http://api.mesto.kliueva.nomoredomains.club/",
   headers: {
     "content-type": "application/json",
   },

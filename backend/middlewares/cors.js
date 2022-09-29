@@ -1,7 +1,7 @@
 const allowedCors = [
-  'https://praktikum.tk',
-  'http://praktikum.tk',
-  'localhost:3000',
+  'http://mesto.kliueva.nomoredomains.club',
+  'http://api.mesto.kliueva.nomoredomains.club',
+  'http://localhost:3000',
 ];
 
 const cors = (req, res, next) => {
@@ -12,6 +12,7 @@ const cors = (req, res, next) => {
 
   if (allowedCors.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
+    res.header('Access-Control-Allow-Credentials', true);
   }
 
   if (method === 'OPTIONS') {
