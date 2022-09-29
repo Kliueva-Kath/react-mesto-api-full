@@ -1,0 +1,41 @@
+{
+  "name": "express-mesto-gha",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "lint": "npx eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kliueva-Kath/express-mesto-gha.git"
+  },
+  "author": "Ekaterina Kliueva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kliueva-Kath/express-mesto-gha/issues"
+  },
+  "homepage": "https://github.com/Kliueva-Kath/express-mesto-gha#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "celebrate": "^15.0.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "express-winston": "^4.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.3",
+    "validator": "^13.7.0",
+    "winston": "^3.8.2"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "nodemon": "^2.0.19"
+  }
+}

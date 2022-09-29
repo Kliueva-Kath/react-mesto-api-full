@@ -1,0 +1,7 @@
+.page {
+  background: black;
+  min-width: 320px;
+  max-width: 100vw;
+  min-height: 100vh;
+  margin: 0 auto;
+}

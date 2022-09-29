@@ -1,0 +1,8 @@
+.header__mobile-menu {
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  display: none;
+}

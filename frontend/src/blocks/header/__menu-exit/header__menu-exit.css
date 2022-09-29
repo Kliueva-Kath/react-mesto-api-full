@@ -1,0 +1,8 @@
+.header__menu-exit {
+  background-color: transparent;
+  background-image: url("../../../images/close-icon.svg");
+  background-size: contain;
+  height: 20px;
+  width: 20px;
+  margin-right: 27px;
+}

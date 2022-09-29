@@ -1,0 +1,25 @@
+.tooltip__text {
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1.21;
+  color: #000000;
+  text-align: center;
+  margin: 32px 0 24px;
+}
+
+@media screen and (max-width: 900px) {
+  .tooltip__text {
+    font-size: 22px;
+    line-height: 1.21;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .tooltip__text {
+    font-size: 20px;
+    line-height: 1.2;
+    margin: 40px 0 25px;
+  }
+}

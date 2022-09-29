@@ -1,0 +1,19 @@
+.form__input {
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 0 0 9px;
+  max-width: 358px;
+  margin-bottom: 30px;
+}
+
+.form__input::placeholder {
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}

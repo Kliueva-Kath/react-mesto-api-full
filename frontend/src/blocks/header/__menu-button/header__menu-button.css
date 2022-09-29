@@ -1,0 +1,12 @@
+.header__menu-button {
+  background-color: transparent;
+  background-image: url("../../../images/header__menu-button.svg");
+  background-size: contain;
+  width: 24px;
+  height: 18px;
+  margin-right: 27px;
+}
+
+.header__menu-button:hover {
+  opacity: 0.6;
+}

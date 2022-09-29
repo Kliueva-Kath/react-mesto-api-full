@@ -1,0 +1,17 @@
+.auth-form__redirect {
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  text-align: center;
+  color: #ffffff;
+  margin: 15px auto;
+  max-width: 358px;
+}
+
+@media screen and (max-width: 500px) {
+  .auth-form__redirect {
+    margin: 20px auto;
+  }
+}
