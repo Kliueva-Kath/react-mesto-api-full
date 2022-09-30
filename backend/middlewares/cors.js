@@ -1,6 +1,8 @@
 const allowedCors = [
   'http://mesto.kliueva.nomoredomains.club',
+  'https://mesto.kliueva.nomoredomains.club',
   'http://api.mesto.kliueva.nomoredomains.club',
+  'https://api.mesto.kliueva.nomoredomains.club',
   'http://localhost:3000',
 ];
 
@@ -16,8 +18,8 @@ const cors = (req, res, next) => {
   }
 
   if (method === 'OPTIONS') {
-    res.header('Access-Control-Allow-Headers', requestHeaders);
     res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
+    res.header('Access-Control-Allow-Headers', requestHeaders);
 
     return res.end();
   }

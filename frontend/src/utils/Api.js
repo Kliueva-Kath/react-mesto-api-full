@@ -80,10 +80,9 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: "http://api.mesto.kliueva.nomoredomains.club",
+  baseUrl: "https://api.mesto.kliueva.nomoredomains.club",
   headers: {
     "content-type": "application/json",
-    authorization: "dec93d61-0cc9-4efe-ab10-1321bb5cdf78",
   },
 });
 

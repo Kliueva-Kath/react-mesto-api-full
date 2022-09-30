@@ -29,20 +29,17 @@ class Auth {
     }).then(this._checkResponse);
   }
 
-  checkToken(token) {
+  checkToken() {
     return fetch(`${this._url}/users/me`, {
       method: "GET",
-      headers: {
-        ...this._headers,
-        Authorization: `Bearer ${token}`,
-      },
+      headers: this._headers,
       credentials: 'include',
     }).then(this._checkResponse);
   }
 }
 
 const auth = new Auth({
-  baseUrl: "http://api.mesto.kliueva.nomoredomains.club/",
+  baseUrl: "https://api.mesto.kliueva.nomoredomains.club",
   headers: {
     "content-type": "application/json",
   },

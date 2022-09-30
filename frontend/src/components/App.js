@@ -39,6 +39,7 @@ function App() {
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [email, setEmail] = useState("");
 
+
   // получаем и устанавливаем информацию о пользователе с сервера
   useEffect(() => {
     if (isLoggedIn) {
@@ -67,28 +68,9 @@ function App() {
     }
   }, [isLoggedIn]);
 
-  // проверка токена
-  useEffect(() => {
-    const token = localStorage.getItem("jwt");
-    if (token) {
-      auth
-        .checkToken(token)
-        .then((res) => {
-          if (res) {
-            setEmail(res.data.email);
-            setLoggedIn(true);
-            history.push("/");
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  });
-
   // событие нажатия на кнопку лайка
   function handleCardLike(card) {
-    const isLiked = card.likes.some((item) => item._id === currentUser._id);
+    const isLiked = card.likes.some((item) => item === currentUser._id);
     api.changeLikeCardStatus(card._id, !isLiked).then((newCard) => {
       setCards((state) => state.map((c) => (c._id === card._id ? newCard : c)));
     });
@@ -102,6 +84,9 @@ function App() {
       .then(() => {
         setCards((state) => state.filter((c) => c._id !== card._id));
         closeAllPopups();
+      })
+      .catch((err) => {
+        console.log(err);
       })
       .finally(() => setIsLoading(false));
   }
@@ -193,20 +178,36 @@ function App() {
     auth
       .authorize(data)
       .then((res) => {
-        if (res.token) {
-          localStorage.setItem("jwt", res.token);
+          localStorage.setItem("loggedIn", "true");
           setLoggedIn(true);
           setEmail(res.email);
           history.push("/");
-          return res;
-        } else {
-          return;
-        }
       })
       .catch((err) => {
-        console.log(err);
+        setRegistationSuccessful(false);
+        setInfoTooltipPopupOpen(true);
       });
   }
+
+    // проверка токена
+    useEffect(() => {
+      const loggedIn = localStorage.getItem("loggedIn");
+      if (loggedIn) {
+        auth
+          .checkToken()
+          .then((res) => {
+            if (res) {
+              setEmail(res.data.email);
+              setLoggedIn(true);
+              history.push("/");
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+    }, []);
+  
 
   function handleRegistration(data) {
     auth
@@ -223,7 +224,7 @@ function App() {
   }
 
   function handleLogout() {
-    localStorage.removeItem("jwt");
+    localStorage.removeItem("loggedIn");
     setLoggedIn(false);
     history.push("/sign-up");
   }
