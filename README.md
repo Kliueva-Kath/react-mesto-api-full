@@ -3,6 +3,6 @@
   
 ### Ссылки на проект  
 
-ip: 51.250.8.147  
-Frontend: https://mesto.kliueva.nomoredomains.club  
-Backend: https://api.mesto.kliueva.nomoredomains.club  
+IP 51.250.8.147  
+Frontend https://mesto.kliueva.nomoredomains.club  
+Backend https://api.mesto.kliueva.nomoredomains.club  
