@@ -4,5 +4,5 @@
 ### Ссылки на проект  
 
 ip: 51.250.8.147  
-Frontend: [](mesto.kliueva.nomoredomains.club)  
-Backend: [](api.mesto.kliueva.nomoredomains.club)  
+Frontend: https://mesto.kliueva.nomoredomains.club  
+Backend: https://api.mesto.kliueva.nomoredomains.club  
