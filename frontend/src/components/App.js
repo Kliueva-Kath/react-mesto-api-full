@@ -47,6 +47,7 @@ function App() {
         .getUserInfo()
         .then((userInfo) => {
           setCurrentUser(userInfo);
+          setEmail(userInfo.email);
         })
         .catch((err) => {
           console.log(err);
@@ -178,26 +179,27 @@ function App() {
     auth
       .authorize(data)
       .then((res) => {
-          localStorage.setItem("loggedIn", "true");
+        if (res.token) {
+           localStorage.setItem("token", res.token); 
           setLoggedIn(true);
-          setEmail(res.email);
+        //  setEmail(res.email);
           history.push("/");
+        }
       })
       .catch((err) => {
-        setRegistationSuccessful(false);
-        setInfoTooltipPopupOpen(true);
+        console.log(err);
       });
   }
 
     // проверка токена
     useEffect(() => {
-      const loggedIn = localStorage.getItem("loggedIn");
-      if (loggedIn) {
+      const token = localStorage.getItem("token");
+      if (token) {
         auth
           .checkToken()
           .then((res) => {
             if (res) {
-              setEmail(res.data.email);
+              setEmail(res.email);
               setLoggedIn(true);
               history.push("/");
             }
@@ -224,9 +226,10 @@ function App() {
   }
 
   function handleLogout() {
-    localStorage.removeItem("loggedIn");
+    localStorage.removeItem("token");
     setLoggedIn(false);
-    history.push("/sign-up");
+    setEmail("");
+    history.push("/sign-in");
   }
 
   // JSX-разметка
